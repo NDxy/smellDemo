@@ -1,0 +1,106 @@
+
+/*******************样式重置*****************/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/*@font-face {*/
+/*!*font-family: FontAwesome;*!*/
+/*src: url('../fonts/fontawesome-webfont.ttf'),*/
+/*url('../fonts/fontawesome-webfont.eot');!*IE9*!*/
+/*}*/
+
+body, html {
+    font-family: "Microsoft yahei";
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    /*background: #F0F3F4;*/
+    color: #333;
+    height: 100%;
+}
+/*body{*/
+    /*padding-top: 50px;*/
+/*}*/
+label {
+    font-weight: normal;
+}
+
+ul, ol, h1, h2, h3, h4, h5, h6, p, td, dd, form, img, input, button, textarea, a {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+    transition: color .1s ease;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #1abc9c;
+    /*color: #E74C3C;*/
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: block;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix{
+    zoom: 0;
+}
+.rt {
+    float: right;
+}
+
+.lf {
+    float: left;
+}
+.do{
+    color: #E04549;
+}
+.hint{
+    /*margin-left: 5px;*/
+    color: #5290D6;
+}
+.container{
+    /*width: 1040px;*/
+    /*margin: 0 auto;*/
+    padding-left: 50px;
+}
+
+/**
+树 tree
+ */
+.tree_box .tree a{
+    display: block;
+    padding: 6px 15px;
+
+}
+.tree_box .tree a:hover{
+    background: #eee;
+    color: #0E2D5F;;
+}

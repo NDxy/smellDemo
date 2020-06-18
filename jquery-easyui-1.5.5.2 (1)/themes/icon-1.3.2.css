@@ -1,0 +1,282 @@
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('icons/edit_add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('icons/pencil.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('icons/edit_remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('icons/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+.icon-filter{
+	background:url('icons/filter.png') no-repeat center center;
+}
+
+
+.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}
+
+.icon-large-picture{
+	background:url('icons/large_picture.png') no-repeat center center;
+}
+.icon-large-clipart{
+	background:url('icons/large_clipart.png') no-repeat center center;
+}
+.icon-large-shapes{
+	background:url('icons/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('icons/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('icons/large_chart.png') no-repeat center center;
+}
+
+/*清空*/
+.icon-clear {
+	background: url('icons/le_delete.png') no-repeat center center;
+}
+
+@font-face {
+	src: url('fonts/FontAwesome.otf'),
+	url('fonts/fontawesome-webfont.eot'),
+	url('fonts/fontawesome-webfont.ttf'),
+	url('fonts/fontawesome-webfont.woff');
+	font-weight:normal;
+	font-style: normal;
+	font-family: Awesome;
+}
+
+.icon,.btn_icon,.main_icon,.tree_icon,.tabs_icon{
+	font-size: 20px;
+	line-height: 30px;
+	color: #0091F7;
+	font-family: Awesome;
+}
+.tabs_icon{
+	color: #999;
+	font-size: 22px;
+}
+.btn_icon{
+	font-size: 14px;
+	color: #fff;
+}
+.btn_icon:before{
+	position: relative;
+	left: -8px;
+}
+/*面页面图标 start*/
+.main_icon{
+	color: #555;
+	font-size: 20px;
+}
+.main_icon:before{
+	position: relative;
+	left: -12px;
+}
+.icon_index:before{
+	content: '\f015';/*首页*/
+}
+.icon_patient:before{
+	content: '\f0c0';/*患者*/
+}
+.icon_followUp:before{
+	content: '\f0fa';/*随访*/
+}
+.icon_knowledgeBase:before{
+	content: '\f19d';/*知识库*/
+}
+.icon_statistics:before{
+	content: '\f201';/*统计*/
+}
+.icon_setting:before{
+	content: '\f013';/*系统设置*/
+}
+/*面页面图标 end*/
+
+.icon_chart:before{
+	content: '\f080';/*报表*/
+}
+
+.icon_volume:before{
+	content: '\f028';/*音量*/
+}
+
+.icon_list:before{
+	content: '\f00b';/*list*/
+}
+
+.icon_pen:before{
+	content: '\f040';/*笔*/
+}
+
+.icon_edit:before{
+	content: '\f044';/*edit*/
+}
+
+.icon_mapSigns:before{
+	content: '\f277';/*路标*/
+}
+
+.icon_add:before{
+	content: '\f067';/*add*/
+}
+
+.icon_search:before{
+	content: '\f002';/*search*/
+}
+.icon_excel:before{
+	content: '\f1c3';/*excel*/
+}
+.icon_refresh:before{
+	content: '\f021';/*refresh*/
+}
+.icon_close:before{
+	content: '\f00d';/*close*/
+}
+
+.icon_save:before{
+	content: '\f0c7';/*save*/
+}
+
+.icon_send:before{
+	content: '\f1d9';/*send*/
+}
+
+.icon_hint:before{
+	content: '\f05a';/*hint(提示)*/
+}
+
+.icon_pieChart:before{
+	content: '\f200';/*pie(饼状图)*/
+}
+
+.icon_question:before{
+	content: '\f059';/*question(问题)*/
+}
+
+.icon_warning:before {
+	content: '\f071';/*warning(警告)*/
+}
+.icon_check:before{
+	content: '\f05d';/*check(选择)*/
+}
+.icon_text:before{
+	content: '\f15c';/*check(文本)*/
+}
+.icon_filter:before{
+	content: '\f0b0';/*filter(筛选)*/
+}
+.icon_OK:before{
+	content: '\f00c';/*OK(打钩)*/
+}
+.icon_trash:before{
+	content: '\f014';/*trash(垃圾)*/
+}
+
+.icon_circleDown:before{
+	content: '\f13a';/*circleDown(圆下)*/
+}
+.icon_circleUp:before{
+	content: '\f139';/*circleUp(圆上)*/
+}
+.icon_reply:before{
+	content: '\f122';/*reply(回应)*/
+}
+.icon_arrowCircleLeft:before{
+	content: '\f0a8';/*arrowCircleLeft(圆左箭头)*/
+}
+.icon_arrowCircleRight:before{
+	content: '\f0a9';/*arrowCircleLeft(圆右箭头)*/
+}
+.icon_camera:before{
+	content: '\f03d';/*camera(录像)*/
+}
+.icon_TV:before{
+	content: '\f26c';/*TV(TV)*/
+}
+.icon_learn:before{
+	content: '\f212';/*learn(学习)*/
+}
+.icon_bold:before{
+	content: '\f032';/*bold(粗体字)*/
+}
+.icon_exchange:before{
+	content: '\f0ec';/*exchange(互换)*/
+}
+/*tree icon start*/
+.tree_icon{
+	color: #777;
+}
+.tree_icon:before{
+	position: relative;
+	left: -8px;
+}
+.icon_peapleAdd:before{
+	content: '\f234 ';/*peapleAdd加人*/
+}
+
+.icon_searchPlus:before{
+	content: '\f00e ';/*searchPlus搜索*/
+}
+
+.icon_examine:before{
+	content: '\f2bc ';/*病例审核*/
+}
+
+.icon_book:before{
+	content: '\f02d ';/*book书*/
+}
+
+/*tree icon end*/

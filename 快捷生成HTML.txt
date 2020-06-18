@@ -1,0 +1,14 @@
+常用的IDEA简单生成HTML代码：
+
+元素 + tab —> 例：（div + tab）<div></div>
+元素*5 + tab —> 例：(div*5 + tab) <div></div><div></div><div></div><div></div><div></div>
+元素.class + tab —> 例：(div.demo + tab) <div class="demo"></div>
+元素#id + tab —> 例：(div#demo + tab) <div #="demo"></div>
+元素parent>元素children + tab —> 例：(div>p + tab) <div><p></p></div>
+元素+元素 + tab —> 例：(div+p + tab) <div></div><p></p>
+元素[属性] + tab —>例：(div[data-id=7758258] + tab) <div data-id="7758258"></div>
+lorem + tab —>例：(会自动生成一段假文，没有意义的文字) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis doloribus fuga hic illo itaque minima nobis odio quaerat quibusdam, similique soluta ullam ut veritatis vero! Earum illo molestiae vel.
+
+关联起来写，例：
+
+(div.leftBox#leftBox>ul.items>li.item[name=567]*5>lorem)+(div.rightBox#rightBox>div.row*10>div.articleBox>div.title+div.textBox>p.textMian>lorem*5)

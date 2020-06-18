@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>复选框插件</title>
+    <link rel="stylesheet" href="css/FormUI.css">
+</head>
+<body>
+<h1>复选框插件</h1>
+
+<h3>使用class</h3>
+<div>
+    <label for="chk1"><input type="checkbox" name="chk1" id="chk1" class="FUI_chkself" value="1">选项1</label>
+    <label for="chk2"><input type="checkbox" name="chk1" id="chk2" class="FUI_chkself" value="2">选项2</label>
+    <label for="chk3"><input type="checkbox" name="chk1" id="chk3" class="FUI_chkself" value="3">选项3</label>
+</div>
+<hr>
+<h3>使用JS</h3>
+<div>
+    <label for="chk4"><input type="checkbox" name="chk2" id="chk4" value="4">选项4</label>
+    <label for="chk5"><input type="checkbox" name="chk2" id="chk5" value="5">选项5</label>
+    <label for="chk6"><input type="checkbox" name="chk2" id="chk6" value="6">选项6</label>
+</div>
+
+<script language="JavaScript" src="js/jquery-1.9.1.js"></script>
+<script language="JavaScript" src="js/FormUI.js"></script>
+<script>
+//    //    赋值
+//    $('[name="chk1"]')._chkself("select","1,3");
+//    $('[name="chk2"]')._chkself("select","6,5");
+//    //    获取值：获取到value值数组
+//    console.log($('[name="chk1"]')._chkself("getValue"));
+//    console.log($('[name="chk2"]')._chkself("getValue"));
+    //    设置属性
+    $('[name="chk1"]')._chkself({width:400,row:true});
+
+    $('[name="chk1"]')._chkself({
+        _onChanged:function(){
+            console.log("您选择了value值为"+$(this).val()+"的选项！");
+        }
+    });
+    //    设置属性
+    $('[name="chk2"]')._chkself({width:400,row:false});
+    $('[name="chk2"]')._chkself({
+        _onChanged:function(){
+            console.log("您选择了value值为"+$(this).val()+"的选项！");
+        }
+    });
+</script>
+</body>
+</html>

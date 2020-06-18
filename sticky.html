@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sticky</title>
+    <style>
+        body,html{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            padding-bottom: 200px;
+            height: 5000px;
+            width: 100%;
+            position: relative;
+        }
+        .Box{
+            float: left;
+            width: 450px;
+            height: 450px;
+            border: 1px solid #ccc;
+            margin: 100px;
+            position: relative;
+        }
+        .self{
+            position: sticky;
+            top: 10px;
+        }
+        .child{
+            width: 45px;
+            height: 45px;
+            border: 1px solid #1abc9c;
+            /*margin: 100px;*/
+            position: sticky;
+            top:10px;
+            font-size: attr(data-font px);
+        }
+        .child:after{
+            content: attr(data-font);
+        }
+        /*.child[data-font]{*/
+            /*font-size: attr(data-font em,1);*/
+        /*}*/
+        .background {
+            height: 100vh;
+        }
+        .background {
+            background-color: red;
+        }
+
+        .background[data-background] {
+            background-color: attr(data-background color, red);
+        }
+    </style>
+</head>
+<body>
+<!--<div class="Box self"></div>-->
+<div class="Box">
+    <div class="child" data-font="32">
+
+    </div>
+</div>
+<div class="background" data-background="lime">颜色应该是红色而不是绿色因为浏览器并不支持attr()的高级用法</div>
+</body>
+</html>

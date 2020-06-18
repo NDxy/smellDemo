@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>吸毒人群</title>
+    <link rel="stylesheet" href="css/question.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+
+<div class="container">
+    <form class="layui-form" action="" lay-filter="form1">
+        <div id="m1" class="questiosn_box">
+            <h3 class="title_l">健康调查问卷（Ⅰ）</h3>
+            <div class="module_box">
+                <h2 class="module_title">问卷基本信息</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">A01 监测地点：</p>
+                        <div class="layui-input-inline">
+                            <select id="jiancsheng" name="jiancsheng">
+                                <option value="">请选择省</option>
+                                <option value="广西省">广西省</option>
+                                <option value="广东省">广东省</option>
+                                <option value="云南省">云南省</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select id="jiancshi" name="jiancshi">
+                                <option value="">请选择市</option>
+                                <option value="南宁">南宁</option>
+                                <option value="河池">河池</option>
+                                <option value="桂林">桂林</option>
+                                <option value="钦州">钦州</option>
+                                <option value="防城港">防城港</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select id="jiancxian" name="jiancxian">
+                                <option value="">请选择县/区</option>
+                                <option value="西乡塘区">西乡塘区</option>
+                                <option value="青秀区">青秀区</option>
+                                <option value="江南区">江南区</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">A02 哨点类型：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" id="A02" name="A02" disabled value="吸毒人群"
+                                   placeholder="请输入" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">A03 哨点所在地行政区划国标码：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" id="A03" name="A03" placeholder="请输入地行政区划国标码"
+                                   autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">A04 问卷编号：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" id="wenjbh" name="wenjbh" placeholder="请输入问卷编号"
+                                   autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">A05 调查日期：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" name="date" id="diaocrq" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">A06 样本来源：</p>
+                        <div class="layui-input-bloc">
+                            <input type="radio" name="A06" value="1" title="强制戒毒所">
+                            <input type="radio" name="A06" value="2" title="社区">
+                            <input type="radio" name="A06" value="3" title="美沙酮诊所（尿检阳性者）">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+                <div id="" class="questiosn_box hintBox">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你好，我叫……，来自……。我们正在进行一项调查，目的是了解人们对一些健康问题的知识和行为状况。请放心，本次调查不记名，我们会对你的回答保密。我们希望你的回答是你个人的真实情况。调查大约会占用你10分钟时间，调查结束时我可以为你提供一些帮助（例如你可以咨询一些健康方面的问题，我会尽量解答）。希望你支持我们的工作。谢谢！
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;询问调查对象：请问你最近是否参加过此项调查？若回答“是”则结束此次访问。
+                    </p>
+                </div>
+        -->
+        <div id="m2" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">个人基本信息</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B01 性别：</p>
+                        <div>
+                            <input type="radio" name="sex" value="男" title="男">
+                            <input type="radio" name="sex" value="女" title="女">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B02 出生年：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" name="date" id="csn" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B03 婚姻状况：</p>
+                        <div>
+                            <input type="radio" name="marry" value="1" title="未婚"><br>
+                            <input type="radio" name="marry" value="2" title="在婚"><br>
+                            <input type="radio" name="marry" value="3" title="同居"><br>
+                            <input type="radio" name="marry" value="4" title="离异或丧偶">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B04 户籍所在地：</p>
+                        <div class="">
+                            <input type="radio" name="huj" value="1" title="本省"><br>
+                            <input type="radio" name="huj" value="2" title='外省'>
+                            <select name="quiz1">
+                                <option value="">请选择省</option>
+                                <option value="广西省">广西省</option>
+                                <option value="广东省">广东省</option>
+                                <option value="云南省">云南省</option>
+                            </select>
+                            <input type="radio" name="huj" value="3" title='外籍（跳至B06） <input type="text" style="width:190px;" id="waij" name="waij" placeholder="请输入国家名称"
+                                   autocomplete="off"
+                                   class="layui-input">'>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B05 民族：</p>
+                        <div class="layui-input-inline">
+                            <select name="quiz1">
+                                <option value="">请选择民族</option>
+                                <option value="汉族">汉族</option>
+                                <option value="壮族">壮族</option>
+                                <option value="苗族">苗族</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B06 文化程度：</p>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="education" value="1" title="文盲"><br>
+                            <input type="radio" name="education" value="2" title="小学"><br>
+                            <input type="radio" name="education" value="3" title="初中"><br>
+                            <input type="radio" name="education" value="4" title="高中或者中专"><br>
+                            <input type="radio" name="education" value="5" title="大专级以上">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">B07 抓获地：</p>
+                        <div class="layui-input-inline">
+                            <select name="quiz1">
+                                <option value="">请选择省</option>
+                                <option value="广西省">广西省</option>
+                                <option value="广东省">广东省</option>
+                                <option value="云南省">云南省</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="quiz2">
+                                <option value="">请选择市</option>
+                                <option value="南宁">南宁</option>
+                                <option value="河池">河池</option>
+                                <option value="桂林">桂林</option>
+                                <option value="钦州">钦州</option>
+                                <option value="防城港">防城港</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="quiz3">
+                                <option value="">请选择县/区</option>
+                                <option value="西乡塘区">西乡塘区</option>
+                                <option value="青秀区">青秀区</option>
+                                <option value="江南区">江南区</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m3" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">艾滋病知晓率</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C01 艾滋病是一种不可治愈的严重传染病吗？：</p>
+                        <div>
+                            <input type="radio" name="C01" value="1" title="是">
+                            <input type="radio" name="C01" value="2" title="否">
+                            <input type="radio" name="C01" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C02 与艾滋病病毒感染者共用注射器有可能得艾滋病吗？：</p>
+                        <div>
+                            <input type="radio" name="C02" value="1" title="可能">
+                            <input type="radio" name="C02" value="2" title="不可能">
+                            <input type="radio" name="C02" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C03 通过外表可以判断一个人是否感染了艾滋病吗？：</p>
+                        <div>
+                            <input type="radio" name="C03" value="1" title="可以">
+                            <input type="radio" name="C03" value="2" title="不可以">
+                            <input type="radio" name="C03" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C04 坚持正确使用安全套可以减少感染和传播艾滋病的风险吗？：</p>
+                        <div>
+                            <input type="radio" name="C04" value="1" title="可以">
+                            <input type="radio" name="C04" value="2" title="不可以">
+                            <input type="radio" name="C04" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C05 使用新型毒品（如冰毒、摇头丸、K粉等）会增加感染艾滋病的风险吗？：</p>
+                        <div>
+                            <input type="radio" name="C05" value="1" title="会">
+                            <input type="radio" name="C05" value="2" title="不会">
+                            <input type="radio" name="C05" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C06 参加戒毒药物维持治疗可以降低感染艾滋病的风险吗？：</p>
+                        <div>
+                            <input type="radio" name="C06" value="1" title="可以">
+                            <input type="radio" name="C06" value="2" title="不可以">
+                            <input type="radio" name="C06" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C07 发生高危行为后（共用针具吸毒/不安全性行为等），应主动寻求艾滋病检测与咨询吗？：</p>
+                        <div>
+                            <input type="radio" name="C07" value="1" title="是">
+                            <input type="radio" name="C07" value="2" title="否">
+                            <input type="radio" name="C07" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">C08 故意传播艾滋病需要承担法律责任吗？：</p>
+                        <div>
+                            <input type="radio" name="C08" value="1" title="需要">
+                            <input type="radio" name="C08" value="2" title="不需要">
+                            <input type="radio" name="C08" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m4" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">吸毒行为情况</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D01 你目前主要使用哪种毒品?（可多选）：</p>
+                        <div class="" style="line-height: 45px;">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="1" title="海洛因">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="2" title="可卡因">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="3" title="鸦片">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="4" title="大麻">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="5" title="吗啡">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="6" title="冰毒">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="7" title="杜冷丁">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="8"
+                                   title="K粉(氯氨酮)">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="9" title="摇头丸">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="10" title="麻古">
+                            <input type="checkbox" lay-skin="primary" lay-filter="D01" name="D01" value="11" title='其它'>
+                            <div class="layui-input-inline" style="float: none;">
+                                <input type="text" id="D01qt" name="D02a" style="width: 120px" placeholder="其他类型"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D02 你曾经注射过毒品吗?：</p>
+                        <div class="">
+                            <input type="radio" name="D02" lay-filter="D02" value="1" title='是'>
+                            <input type="radio" name="D02" lay-filter="D02" value="2" title="否（跳至E00a）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem D02Hide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">Z01 你第一次注射吸毒是哪一年？：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" name="date" id="xdnf" autocomplete="off" style="width: 120px;"
+                                   placeholder="请输入年份" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem D02Hide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D03 最近一个月，你注射过毒品吗?：</p>
+                        <div>
+                            <input type="radio" name="D03" value="1" title='是'>
+                            <input type="radio" name="D03" value="2" title="否（跳至D05）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem D02Hide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D04你最近一个月平均每天注射吸毒多少次？：</p>
+                        <div>
+                            <input type="text" id="D02a" name="D04" style="width: 120px" placeholder="请输入次数"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem D02Hide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D05 你曾经与别人共用过针具吗？:</p>
+                        <div>
+                            <input type="radio" name="D05" value="1" title="是">
+                            <input type="radio" name="D05" value="2" title="否（跳至E00a）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem D02Hide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D06 最近一个月，你注射毒品时与别人共用过针具吗？:</p>
+                        <div>
+                            <input type="radio" name="D06" value="1" title="是">
+                            <input type="radio" name="D06" value="2" title="否（跳至E00a）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem D02Hide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">D07 你最近一个月注射毒品时，与别人共用针具的频率如何？:</p>
+                        <div>
+                            <input type="radio" name="D07" value="1" title="未共用">
+                            <input type="radio" name="D07" value="2" title="有时共用">
+                            <input type="radio" name="D07" value="3" title="每次都共用">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m5" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">性行为情况</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E00a 最近一年，你是否有过性行为？：</p>
+                        <div>
+                            <input type="radio" lay-filter="E00a" name="E00a" value="1" title="是">
+                            <input type="radio" lay-filter="E00a" name="E00a" value="2" title="否（跳至G01）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E00b 最近一年，你是否有过吸食毒品后发生性行为？：</p>
+                        <div class="">
+                            <input type="radio" name="D02" value="1" title='是'>
+                            <input type="radio" name="D02" value="2" title="否（跳转E01）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E00c 最近一年，你最近一次吸食毒品后发生性行为时使用安全套了吗？：</p>
+                        <div>
+                            <input type="radio" lay-filter="E00c" name="E00c" value="1" title="是">
+                            <input type="radio" lay-filter="E00c" name="E00c" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E01 最近一个月，你是否有过性行为？：</p>
+                        <div>
+                            <input type="radio" lay-filter="E01" name="E01" value="1" title="是">
+                            <input type="radio" lay-filter="E01" name="E01" value="2" title="否（跳至 E03）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E02 最近一个月内，你最近一次发生性行为时使用安全套了吗？：</p>
+                        <div>
+                            <input type="radio" name="E02" value="1" title="是">
+                            <input type="radio" name="E02" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E03 最近一年，你与她/他（配偶或同居者）发生过性行为吗？：</p>
+                        <div>
+                            <input type="radio" name="E03" value="1" title="是">
+                            <input type="radio" name="E03" value="2" title="否（跳至F01）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E04 最近一年，你与她/他（配偶或同居者）发生性行为时使用安全套的频率如何？：</p>
+                        <div>
+                            <input type="radio" name="F02" value="1" title="从未使用">
+                            <input type="radio" name="F02" value="2" title="有时使用">
+                            <input type="radio" name="F02" value="3" title="每次都用">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem E00aHide">
+                    <div class="layui-form-item">
+                        <p class="problem_title">E05 你最近一次与她/他（配偶或同居者）发生性行为时使用安全套了吗？：</p>
+                        <div>
+                            <input type="radio" name="E05" value="1" title="是">
+                            <input type="radio" name="E05" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m6" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">商业性行为情况</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">F01 最近一年，你与商业性伴发生过性行为吗？：</p>
+                        <div>
+                            <input type="radio" lay-filter="F01" name="F01" value="1" title="是">
+                            <input type="radio" lay-filter="F01" name="F01" value="2" title="否（跳至Z03）">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">F02 最近一年，你与商业性伴发生性行为时使用安全套的频率如何？：</p>
+                        <div>
+                            <input type="radio" name="F02" value="1" title="从未使用">
+                            <input type="radio" name="F02" value="2" title="有时使用">
+                            <input type="radio" name="F02" value="3" title="每次都用">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">F03 最近一年中，你最近一次与商业性伴发生性行为时使用安全套了吗？：</p>
+                        <div class="">
+                            <input type="radio" name="F03" value="1" title='是'>
+                            <input type="radio" name="F03" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">Z02 你与小姐（暗娼）发生性行为时，平均每次多少元？：</p>
+                        <div>
+                            <input type="text" id="Z02" name="Z02" style="width: 120px" placeholder="请输入金额"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">Z03 最近一年，你与同性发生过肛交性行为吗？：</p>
+                        <div>
+                            <input type="radio" lay-filter="Z03" name="Z03" value="1" title="是">
+                            <input type="radio" lay-filter="Z03" name="Z03" value="2" title="否（跳至 G01）">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m7" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">预防艾滋病服务</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">G01 安全套宣传和发放/艾滋病咨询与检测：</p>
+                        <div>
+                            <input type="radio" name="G01" value="1" title="是">
+                            <input type="radio" name="G01" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">G02 社区药物维持治疗 /清洁针具提供/交换</p>
+                        <div>
+                            <input type="radio" name="G02" value="1" title="是">
+                            <input type="radio" name="G02" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">G03 同伴教育:</p>
+                        <div>
+                            <input type="radio" name="G03" value="1" title="是">
+                            <input type="radio" name="G03" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">H03 你的最近一次检测是在什么时间？：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" name="H03" id="jiancsj" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">（如从未做过可不填，结束）</div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">H04你的最近一次检测结果是：</p>
+                        <div>
+                            <input type="radio" name="H04" value="1" title="阴性">
+                            <input type="radio" name="H04" value="2" title="阳性">
+                            <input type="radio" name="H04" value="3" title="不知道">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m8" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">相关检测信息</h2>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">T01 本次调查是否采血:</p>
+                        <div>
+                            <input type="radio" name="T01" value="1" title="是">
+                            <input type="radio" name="T01" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">T02a 是否是既往检测HIV抗体阳性:</p>
+                        <div>
+                            <input type="radio" name="T02a" value="1" title="是">
+                            <input type="radio" name="T02a" value="2" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title">T02b 如果是，最早确证检测为阳性的时间是：</p>
+                        <div class="layui-input-inline">
+                            <input type="text" name="T02b" id="quezsj" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title"><strong>T03 HIV抗体检测结果</strong></p>
+                        <p class="problem_title">第一次ELISA初筛：</p>
+                        <div>
+                            <input type="radio" name="T031" value="1" title="阴性">
+                            <input type="radio" name="T031" value="2" title="阳性(跳至T04)">
+                        </div>
+                        <p class="problem_title">第二次ELISA复检：</p>
+                        <div>
+                            <input type="radio" name="T032" value="1" title="阴性">
+                            <input type="radio" name="T032" value="2" title="阳性">
+                        </div>
+                        <p class="problem_title">确证试验：</p>
+                        <div>
+                            <input type="radio" name="T033" value="1" title="阴性">
+                            <input type="radio" name="T033" value="2" title="阳性">
+                            <input type="radio" name="T033" value="3" title="可疑">
+                            <input type="radio" name="T033" value="4" title="未检测">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title"><strong>T04 HIV抗体检测结果</strong></p>
+                        <p class="problem_title">ELISA检测：</p>
+                        <div>
+                            <input type="radio" name="T041" value="1" title="阴性">
+                            <input type="radio" name="T041" value="2" title="阳性(跳至T05)">
+                        </div>
+                        <p class="problem_title">RPR/TRUST检测：</p>
+                        <div>
+                            <input type="radio" name="T042" value="1" title="阴性">
+                            <input type="radio" name="T042" value="2" title="阳性">
+                        </div>
+                    </div>
+                </div>
+                <div class="problem">
+                    <div class="layui-form-item">
+                        <p class="problem_title"><strong>T05 HIV抗体检测结果</strong></p>
+                        <p class="problem_title">第一次ELISA初筛：</p>
+                        <div>
+                            <input type="radio" name="T051" value="1" title="阴性">
+                            <input type="radio" name="T051" value="2" title="阳性(跳至T05)">
+                        </div>
+                        <p class="problem_title">第二次ELISA初筛：</p>
+                        <div>
+                            <input type="radio" name="T052" value="1" title="阴性(结束)">
+                            <input type="radio" name="T052" value="2" title="阳性">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="m9" class="questiosn_box">
+            <div class="module_box">
+                <h2 class="module_title">录入情况</h2>
+                <div class="problem">
+                    <div class="layui-form-item" style="padding-top: 20px;">
+                        <div class="layui-inline">
+                            <label class="layui-form-label" style="width: 120px">调查员签字</label>
+                            <div class="layui-input-inline">
+                                <input type="tel" name="phone" lay-verify="required|phone" placeholder="请输入调查员"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label" style="width: 120px">督导员签字</label>
+                            <div class="layui-input-inline">
+                                <input type="tel" name="phone" lay-verify="required|phone" placeholder="请输入督导员"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="btn-group">
+    <div class="layui-btn-group">
+        <button class="layui-btn" id="submit">保存</button>
+        <button class="layui-btn">重置</button>
+        <button class="layui-btn">后退</button>
+    </div>
+    <div class="font_size">
+        <ul class="clear">
+            <span class="lf" style="line-height: 30px">字体大小： </span>
+            <li class="first_child" data-fontSize="s">小</li>
+            <li data-fontSize="m">中</li>
+            <li data-fontSize="l">大</li>
+        </ul>
+    </div>
+</div>
+
+<script language="JavaScript" src="js/jquery-1.9.1.js"></script>
+<script src="layui/layui.js"></script>
+<!-- 注意：所有的时间选择期都要在模块里面进行模块渲染才会出现效果 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+
+        /** *注意：所有的时间选择器都要在模块里面进行模块渲染才会出现效果如下：*/
+        //调查日期
+        laydate.render({
+            elem: '#diaocrq'
+        });
+//        出生年
+        laydate.render({
+            elem: '#csn'
+            , type: 'year'
+        });
+//        检测时间
+        laydate.render({
+            elem: '#jiancsj'
+            , type: 'month'
+        });
+//        确诊时间
+        laydate.render({
+            elem: '#quezsj'
+            , type: 'month'
+        });
+
+//       吸毒年份
+        laydate.render({
+            elem: '#xdnf'
+            , type: 'year'
+        });
+
+//        //创建一个编辑器
+//        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+//        form.verify({
+//            title: function (value) {
+//                if (value.length < 5) {
+//                    return '标题至少得5个字符啊';
+//                }
+//            }
+//            , pass: [/(.+){6,12}$/, '密码必须6到12位']
+//            , content: function (value) {
+//                layedit.sync(editIndex);
+//            }
+//        });
+
+//        //监听指定开关
+//        form.on('switch(switchTest)', function (data) {
+//            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+//                offset: '6px'
+//            });
+//            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+//        });
+
+        /** 跳转**********************************************************************************************************************************/
+        /**
+         * 跳转原理，暂时没有时间做太复杂的封装，如果谁有时间封装的话封装一下，调用方便
+         */
+        form.on("radio(D02)", function (data) {
+            if (data.value == 2) {
+                $(".D02Hide").hide();
+            } else {
+                $(".D02Hide").show();
+            }
+        });
+
+        /**
+         * 简单的单选框跳转（隐藏）封装
+         * filter：HTML中lay-filter的值
+         * Helem：对应要隐藏（跳过）的元素
+         * Hvalue：隐藏时候的值（值为该参数时隐藏）
+         */
+        function radioHide(filter, Helem, Hvalue) {
+            form.on("radio(" + filter + ")", function (data) {
+                if (data.value == Hvalue) {
+                    $(Helem).hide();
+                } else {
+                    $(Helem).show();
+                }
+            });
+        }
+
+//        调用
+
+        radioHide("E00a", ".E00aHide", "2");
+
+        /** 赋值的方法**************************************************************************************************************************/
+        /**
+         * 赋值的时候一定要在layUI模块内进行赋值，例如问卷中的form：
+         *
+         *
+         layui.use('form', function(){
+               var form = layui.form;
+
+               //各种基于事件的操作，赋值就是在里面进行的，
+               //（赋值的代码）；
+               写完复制的代码之后，进行组件的重新渲染
+               form.render(type,filter);
+               type，为表单的type类型，可以对对应的表单元素进行渲染，（不写是对表单内所有的元素进行重新渲染）例如：
+
+               form.render('select');//对下来框进行渲染
+            });
+
+         注：一定要严格遵守写法，在模块内进行操作，操作完成记得重新渲染
+         */
+
+
+        /**
+         * 下拉框赋值
+         */
+//        省
+        $("#jiancsheng").children("option[value='广西省']").attr("selected", "");
+//        市
+        $("#jiancshi").children("option[value='南宁']").attr("selected", "");
+//        县
+        $("#jiancxian").children("option[value='西乡塘区']").attr("selected", "");
+        /**
+         * 单选框赋值（复选类似）:$("[name=A06][value="+ value +"]").attr('checked', '');
+         */
+        $("[name=A06][value='1']").attr('checked', '');
+
+        /**
+         * 文本框赋值（日期选择类似）
+         */
+//        文本选择
+        $('#A03').val("7758258");
+//        日期选择
+        $('#diaocrq').val("2018-02-08");
+
+        form.render();
+
+    });
+
+    $('#submit').click(getValue);
+
+    function getValue() {
+        /** 取值的方法**************************************************************************************************************************/
+        /**
+         * 取值的方法相对没有那么的麻烦，直接看例子：
+         */
+
+        var sheng, shi, xian, A02, A03, wenjbh, diaocrq, A06;
+        sheng = $('#jiancsheng').val();
+        shi = $('#jiancshi').val();
+        xian = $('#jiancxian').val();
+        A02 = $('#A02').val();
+        A03 = $('#A03').val();
+        diaocrq = $("#diaocrq").val();
+        wenjbh = $('#wenjbh').val();
+        A06 = $('[name=A06]:checked').val();
+        console.log([sheng, shi, xian, A02, A03, wenjbh, A06]);
+
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            layer.open({
+                title: '保存获取数据'
+                , content: JSON.stringify([sheng, shi, xian, A02, A03, wenjbh, diaocrq, A06])
+            });
+        });
+    }
+
+    //    字体大小调节
+    $('.font_size').on("click", "ul li", function () {
+        console.log($(this).attr('data-fontSize'));
+        var size = $(this).attr('data-fontSize');
+        switch (size) {
+            case "s":
+                $('body').css({"fontSize": "1em"});
+                break;
+            case "m":
+                $('body').css({"fontSize": "1.4em"});
+                break;
+            case "l":
+                $('body').css({"fontSize": "1.65em"});
+
+        }
+    });
+
+</script>
+
+</body>
+</html>

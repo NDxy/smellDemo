@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">切换标签页</button>
+<script type="text/javascript">
+    document.getElementById("btn").onclick = function(event){
+        console.log(event.keyCode);
+        event.ctrlKey = true;
+        event.shiftKey = true;
+        event.keyCode = 9;
+        console.log(event.keyCode,event);
+    };
+    document.onkeydown=function(event){
+        console.log(event.keyCode,event);
+        if(event.ctrlKey==false){
+            event.ctrlKey = true;
+            event.shiftKey = true;
+            event.keyCode = 9;
+            console.log(event.keyCode,event);
+        }
+    };
+    btn.onclick=function(e){
+         console.log(document);
+        var e=document.createEvent("KeyboardEvents");
+        e.initKeyboardEvent("keydown",true,true,window,"U+0009"); // tab
+//        if(nowEle==inputs[inputs.length-1]) nowEle=document;
+        document.focus && document.focus();
+        document.dispatchEvent(e);
+        // console.log(e);
+    };
+</script>
+</body>
+</html>

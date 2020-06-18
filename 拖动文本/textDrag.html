@@ -1,0 +1,62 @@
+<head>
+    <style>
+        #div1 {width:100px; height:100px; background:red; position:absolute;}
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <script>
+        window.onload=function ()
+        {
+            var oDiv=document.getElementById('div1');
+
+            oDiv.onmousedown=function (ev)
+            {
+                var oEvent=ev||event;
+                var disX=oEvent.clientX-oDiv.offsetLeft;
+                var disY=oEvent.clientY-oDiv.offsetTop;
+
+                if(oDiv.setCapture)
+                {
+                    oDiv.onmousemove=fnMove;
+                    oDiv.onmouseup=fnUp;
+
+                    oDiv.setCapture();
+                }
+                else
+                {
+                    document.onmousemove=fnMove;
+                    document.onmouseup=fnUp;
+                }
+
+                function fnMove(ev)
+                {
+                    var oEvent=ev||event;
+
+                    oDiv.style.left=oEvent.clientX-disX+'px';
+                    oDiv.style.top=oEvent.clientY-disY+'px';
+                }
+
+                function fnUp()
+                {
+                    this.onmousemove=null;
+                    this.onmouseup=null;
+                    //用于处理IE下的问题
+                    if(this.releaseCapture)
+                    {
+                        this.releaseCapture();
+                    }
+                }
+                //用于处理FF和Chrome下的问题
+                return false;
+            };
+        };
+    </script>
+</head>
+
+<body>
+asdfas
+<div id="div1">
+    asdfs
+</div>
+zcvx
+</body>

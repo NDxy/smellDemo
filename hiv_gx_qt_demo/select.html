@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>下拉框插件</title>
+    <link rel="stylesheet" href="css/FormUI.css">
+</head>
+<body>
+<h1>下拉框插件</h1>
+<div class="lf" style="width: 500px">
+    <h3>使用class</h3>
+    <label for="sel1">
+        <input placeholder="" readonly="readonly"
+               data-obj='[{"id":1,"text":"选项1"},
+               {"id": 2, "text": "选项2"},
+               {"id": 3, "text": "选项3"},
+               {"id": 4, "text": "选项14"},
+               {"id": 5, "text": "选项15"},
+               {"id": 6, "text": "选项16"},
+               {"id": 7, "text": "选项17"},
+               {"id": 8, "text": "选项18"},
+               {"id": 9, "text": "选项19"},
+               {"id": 10, "text": "选项20"},
+               {"id": 11, "text": "选项21"}]' name="sel1" id="sel1" value="" class="FUI_selself">
+    </label>
+</div>
+<div class="lf" style="width: 500px">
+    <h3>使用JS</h3>
+
+    <label for="sel2">
+        <input placeholder="" readonly="readonly"
+               data-obj='' name="sel2" id="sel2" value="">
+    </label>
+</div>
+<button class="GetValue">GetValue</button>
+<button class="SetValue">SetValue</button>
+<button class="GetText">GetText</button>
+<script language="JavaScript" src="js/jquery-1.9.1.js"></script>
+<script language="JavaScript" src="js/FormUI.js"></script>
+<script>
+    //    基础样式
+    $('#sel1')._selself({
+        panelHeight: 250
+    });
+    //    数据
+    $('#sel2')._selself({
+        data: [{"id": 1, "text": "选项4"},
+            {"id": 2, "text": "选项5"},
+            {"id": 3, "text": "选项6"},
+            {"id": 4, "text": "选项7"},
+            {"id": 5, "text": "选项8"},
+            {"id": 6, "text": "选项9"},
+            {"id": 7, "text": "选项10"},
+            {"id": 8, "text": "选项11"}]
+    });
+    //赋值
+    $(".SetValue").click(function () {
+        $('#sel1')._selself("select", 2);
+        $('#sel2')._selself("select", 6);
+    });
+
+    //取值
+    $('.GetValue').click(function () {
+        console.log($('#sel1')._selself("getValue"));
+        console.log($('#sel2')._selself("getValue"));
+    });
+
+    //取文本
+    $('.GetText').click(function () {
+        console.log($('#sel1')._selself("getText"));
+        console.log($('#sel2')._selself("getText"));
+    });
+
+    //    选择事件
+    $('#sel2')._selself({
+        panelHeight: 300,
+        _onSelect: function () {
+            console.log($(this));
+        }
+    });
+</script>
+</body>
+</html>

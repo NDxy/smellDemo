@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选文本加标</title>
+</head>
+<body>
+<button id="btnRed">red</button>
+<button id="btnBlue">blue</button>
+<button id="btnGreen">green</button>
+<button id="reload">reload</button>
+<div id="text">
+    <p>
+        <span style="background-color: #f00">Lorem ipsum<span style="background-color: #00f"> dolor sit amet, </span>consectetur adipisicing<span
+                style="background-color: #0f0"> elit. A ad, adipisci, aliquam animi </span>aperiam, atque autem commodi </span>consequatur
+        dolor fugiat in incidunt ipsa ipsam itaque laborum neque perspiciatis quod saepe?
+        Dignissimos dolores ea excepturi minima odio omnis repellat, ullam. Aliquid consequuntur corporis, culpa eveniet
+        facere hic illum, iste, itaque laboriosam magnam nam natus nesciunt odit quas quidem. Accusantium, aut, sit.
+        Alias aperiam dicta dolore, eaque enim, est ex explicabo <strong>illo ipsam iusto nam neque quidem repellendus
+        sit sunt. Debiti</strong>s magnam quasi voluptatem. A aperiam consectetur corporis, cumque iste officia rem.
+        Architecto asperiores earum est natus quae qui, recusandae repellendus? Atque, dicta doloremque ducimus enim
+        eveniet ex exercitationem illo ipsum iusto laboriosam maxime necessitatibus neque provident, qui sed sint ut
+        voluptates.
+        Assumenda beatae, sapiente. Distinctio illum laboriosam nisi pariatur quia tempora. Ab atque consequatur
+        cupiditate expedita natus omnis quod voluptate. Atque inventore iure labore repellat voluptatibus. Dolore
+        expedita in praesentium reiciendis?
+    </p>
+</div>
+<div id="Box">
+
+</div>
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+    var _getSelectedText = function () {
+        if (window.getSelection) {
+            return window.getSelection().toString();
+        } else if (document.getSelection) {
+            return document.getSelection();
+        } else if (document.selection) {
+            return document.selection.createRange().text;
+        } else {
+            return "";
+        }
+    }
+
+    $("#btnRed").click(function () {
+        if (document.all) {
+            var tr = document.selection.createRange();
+            if (tr.parentElement().id != "editor") {
+                return;
+            }
+            tr.execCommand("ForeColor", false, "#FF0000");
+        } else {
+//            tr.surroundContents(span);
+//                tr.insertNode(span);
+//                console.log(tr.Text())
+//                tr.extractContents(span);
+            var tr = window.getSelection().getRangeAt(0);
+            var span = document.createElement("span");
+            span.style.cssText = "background:#ff0000";
+            var text = tr.toString();
+            tr.deleteContents();
+            span.innerHTML = text;
+            tr.insertNode(span);
+            console.log(tr);
+            console.log(tr.toString());
+        }
+    });
+
+    $("#btnBlue").click(function () {
+        var tr = window.getSelection().getRangeAt(0);
+        var span = document.createElement("span");
+        var text = tr.toString();
+        tr.deleteContents();
+        span.innerHTML = text;
+        span.style.cssText = "background:#0000ff";
+        tr.insertNode(span);
+        console.log(tr);
+        console.log(tr.toString());
+    });
+
+    $("#btnGreen").click(function () {
+        var tr = window.getSelection().getRangeAt(0);
+        var span = document.createElement("span");
+        var text = tr.toString();
+        tr.deleteContents();
+        span.innerHTML = text;
+        span.style.cssText = "background:#00ff00";
+        tr.insertNode(span);
+        console.log(tr);
+        console.log(tr.toString());
+    });
+    $("#reload").click(function () {
+        var tr = window.getSelection().getRangeAt(0);
+        var span = document.createElement("span");
+        var parent = tr.endContainer.parentNode;
+        var text = parent.innerHTML;
+        var texts = tr.toString();
+        tr.deleteContents();
+//        var text = tr.extractContents();
+        span.innerHTML = texts;
+//        var a = parseDom(texts);
+//        if(parent.nodeName = "SPAN"){
+//            parent.parentNode.removeChild(parent);
+//        }
+        tr.insertNode(span);
+        console.log(tr);
+        console.log(tr.toString());
+    });
+
+    function parseDom(arg) {
+
+        var objE = document.createElement("div");
+
+        objE.innerHTML = arg;
+
+        return objE.childNodes;
+
+    };
+</script>
+</body>
+</html>

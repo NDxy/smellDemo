@@ -1,0 +1,624 @@
+
+/*******************样式重置*****************/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*@font-face {*/
+    /*!*font-family: FontAwesome;*!*/
+    /*src: url('../fonts/fontawesome-webfont.ttf'),*/
+    /*url('../fonts/fontawesome-webfont.eot');!*IE9*!*/
+/*}*/
+/*body *{*/
+    /**/
+/*}*/
+body, html {
+    font-family: "Microsoft yahei";
+    padding: 0 0 50px 0;
+    margin: 0;
+    background: #F0F3F4;
+    color: #333;
+    font-size: 14px;
+}
+label {
+    font-weight: normal;
+}
+
+ul, ol, h1, h2, h3, h4, h5, h6, p, td, dd, form, img, input, button, textarea, a {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+    transition: color .1s ease;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #1abc9c;
+    /*color: #E74C3C;*/
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.rt {
+    float: right;
+}
+
+.lf {
+    float: left;
+}
+.do{
+    color: #E04549;
+}
+.hint{
+    /*margin-left: 5px;*/
+    color: #5290D6;
+}
+
+/*******************问卷头部样式*****************/
+.header{
+    width: 100%;
+    background: #fff;
+    box-shadow:  0 3px 5px #ccc;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+}
+.logo{
+    margin-left: 25px;
+}
+.title_l{
+    line-height: 45px;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+}
+.title{
+    display: inline-block;
+    padding: 0 5px;
+}
+.systemName{
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+}
+.Uname{
+    height: 50px;
+    line-height: 45px;
+}
+.user_Box{
+    position: relative;
+    padding: 0 25px;
+    cursor: pointer;
+    z-index: 1100;
+}
+.user_head{
+    width: 30px;
+    height:30px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    margin-top: -18px;
+    overflow: hidden;
+}
+.user_head img{
+    width: 100%;
+}
+.head_box{
+    margin: 0 5px;
+    width: 30px;
+    height:30px;
+}
+
+.icon{
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    margin-left: 5px;
+    /*background-color: #fff;*/
+    background-image: url("../img/icon/selDown.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: relative;
+    top: 3px;
+}
+
+.user_name{
+
+}
+.container{
+    width: 1024px;
+    margin:  0 auto;
+    padding: 4px 0;
+    position: relative;
+}
+.head{
+    height:50px;
+}
+.user_menu{
+    width: 200px;
+    border:1px solid #CCC;
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    z-index: 500;
+    bottom: -132px;
+    background: #fff;
+    right: 0;
+    display: none;
+}
+.font_size{
+    padding: 10px 0;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+.font_size li{
+    float: left;
+    width: 45px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    border-left:1px solid #ccc;
+    cursor: pointer;
+    transition: background .4s;
+    border-radius: 2px;
+}
+.font_size li.first_child{
+    border:0;
+}
+
+.font_title{
+    padding:0 10px;
+    height: 30px;
+    line-height: 30px;
+
+}
+.font-item{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.login-item{
+    padding: 5px 6px;
+}
+.login-item li{
+    float: left;
+    display: inline-block;
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    border:1px solid #CCC;
+    cursor: pointer;
+    transition: all .4s;
+}
+#out{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#editPwd{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.login-item li:hover,.font_size li:hover{
+    background: #E04549;
+    color: #fff;
+    /*border:1px solid #E04549;*/
+}
+/*******************问卷头部样式*****************/
+
+
+/*******************问卷中间样式*****************/
+/*左菜单栏*/
+.lf_menu{
+    /*width: 20%;*/
+    width: 204px;
+    background: #fff;
+    min-height: 300px;
+    box-shadow: 3px 0 5px #ccc;
+    position: relative;
+    z-index: 5;
+    top: -3px;
+    padding: 25px 0;
+    transition: all .5s;
+}
+.lf_menu_fixed{
+    position: fixed;
+    top: 50px;
+}
+.tree_box > li,.tree2 > li{
+    padding: 10px 10px;
+}
+.tree2 > li:hover{
+    background: #cccccc;
+    cursor: pointer;
+}
+/*.tree_box > li:hover{*/
+    /*background: #cccccc;*/
+/*}*/
+
+
+/*问卷主体*/
+.ques_center{
+    padding: 20px 15px;
+    width: 80%;
+}
+/*主体部分导航*/
+.nav{
+    height: 50px;
+    background: #E04549;
+    padding-top: 10px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+.nav_box li{
+    float: left;
+    min-width: 100px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+
+}
+.nav_box > li.active{
+    background: #fff;
+    color: #E04549;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+}
+.active:after{
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../img/icon/close-circled.png");
+    position: relative;
+    top: 2px;
+}
+li.active>.act_contentrt,li.active>.act_contentlf{
+    display: inline-block;
+    height: 40px;
+    width: 20px;
+    position: absolute;
+    right: -20px;
+    z-index: 20;
+    background: #fff;
+    border: 0;
+}
+li.active>.act_contentlf{
+    left: -20px;
+}
+li.active>.act_contentrt{
+    right: -20px;
+ }
+li.active>.act_contentrt:before,li.active>.act_contentlf:before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 40px;
+    background: #E04549;
+    border: 0;
+}
+li.active>.act_contentrt:before{
+    border-bottom-left-radius: 65%;
+}
+li.active>.act_contentlf:before{
+    border-bottom-right-radius: 65%;
+}
+/*主体内容部分*/
+.questiosn_box{
+    /*min-height: 500px;*/
+    background: #fff;
+    padding: 30px 10px;
+    margin-bottom: 20px;
+}
+
+.module_title{
+    font-size: 18px;
+    color: #E04549;
+    padding-left: 30px;
+    margin: 10px 0 20px 0;
+    border-left: 5px solid #E04549;
+}
+.module_question{
+    padding: 20px 0;
+}
+.problem_answer{
+    display: inline-block;
+    padding: 8px 0;
+    padding-right: 5px;
+}
+.problem{
+    margin-bottom: 10px;
+    padding: 0 20px;
+    border: 1px solid #e6e6e6;
+}
+.problem_title{
+    padding: 5px 0;
+}
+
+.lv2_box{
+    padding-left: 50px;
+    background: #F8F9FA;
+}
+
+/*提示*/
+
+.hintBox{
+    padding:30px;
+}
+/*******************问卷中间样式*****************/
+
+/*******************页尾*****************/
+
+.footer{
+    width:100%;
+    height: 50px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    line-height: 50px;
+    /*background: #e04549;*/
+}
+.btn_box{
+    text-align: center;
+}
+.btn_box a{
+    padding: 0 30px;
+    border: 1px solid #e04549;
+    display: inline-block;
+    margin: 0 3px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 5px;
+    background: #e04549;
+    color: #FFF;
+    transition: all .4s;
+    cursor: pointer;
+}
+.btn_box a:hover{
+    background: #1abc9c;
+    border: 1px solid #1abc9c;
+}
+.btn_box a:active{
+    background: #1abc9c;
+    border: 1px solid #1abc9c;
+}
+/*******************页尾*****************/
+
+.fixed_menuH{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    transition: all .4s;
+    position: fixed;
+    background: #fff;
+    right: -20px;
+    top:20%;
+    z-index: 500;
+    overflow: hidden;
+}
+
+.fixed_menuS{
+    width: 170px;
+    height: 284px;
+    position: fixed;
+    background: #fff;
+    right: 0;
+    top:20%;
+    border:1px solid #CCC;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 500;
+    /*transition: all .4s;*/
+    animation:menu_frames 1.5s 1;
+}
+@keyframes menu_frames
+{
+    0% {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        transition: all .4s;
+        position: fixed;
+        background: #fff;
+        right: -20px;
+        top:20%;
+        overflow: hidden;
+    }
+    25% {
+        right: 0;
+    }
+    50% {
+        width:170px;
+        height: 40px;
+        right: 0;
+        border-radius: 5px;
+    }
+    75%  {
+        height: 284px;
+    }
+    100% {
+        /*height: auto;*/
+    }
+}
+.menu_title{
+    height: 40px;
+    line-height: 40px;
+    /*text-align: center;*/
+    background: #E04549;
+    color: #fff;
+    position: relative;
+}
+.menu_item{
+    /*padding:15px 0;*/
+    height: 244px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.menu_item>ul{
+    width: 175px;
+}
+.menu_item>ul>li{
+    padding: 5px 0 5px 15px;
+    transition: all .4s;
+    cursor: pointer;
+}
+.menu_item>ul>li:hover{
+    background: #E04549;
+    color: #FFF;
+}
+.menu_item>ul>li:active{
+    background: #E04549;
+    color: #FFF;
+}
+.close_menu{
+    margin-left: 10px;
+}
+
+/*******************浮动导航菜单*****************/
+
+/*********************TOTOP*****************/
+.toTop{
+    display: none;
+    position: fixed;
+    right:20px;
+    top: 85%;
+    width: 50px;
+    height: 50px;
+    line-height: 20px;
+    border: 1px solid transparent;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.toTop p,.toTop h3{
+    text-align: center;
+}
+/*********************TOTOP*****************/
+
+/*字体*/
+.font_box li{
+    float: left;
+    padding:0 10px;
+    border-right: 2px solid #FFF;
+    color: #fff;
+    cursor:pointer;
+    font-size: 16px;
+}
+.font_box li:last-child{
+    border: 0;
+}
+.font_box{
+    /*position: relative;*/
+    /*top: -10px;*/
+    margin-top: 5px;
+    font-size: 14px;
+}
+/*******************浮动导航菜单*****************/
+
+/*****************StartMark****************/
+
+.mark{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 11000;
+    background-color: #fff;
+}
+.mark img{
+    width: 100%;
+}
+/*****************StartMark****************/
+
+/*自适应样式*/
+@media screen and (max-width: 766px) {
+    .container{
+        width: 100%;
+    }
+    .systemName{
+        display: none;
+    }
+    .lf_menu{
+        position: fixed;
+        top: 60px;
+        width: 150px;
+        height: 100%;
+        left: -155px;
+        z-index: 1200;
+        padding-bottom: 85px;
+        overflow-y: auto;
+    }
+    .ques_center{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 991px) {
+    .container{
+        width: 100%;
+    }
+    .lf_menu{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .container{
+        width: 1024px;
+    }
+    .lf_menu{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .container{
+       width: 100%;
+    }
+    .lf_menu{
+        width: 20%;
+    }
+}
+
+.btn-group{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding: 10px 0;
+    background: #ffffff;
+    position: fixed;
+    bottom:0;
+}

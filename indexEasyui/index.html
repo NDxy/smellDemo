@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="easyui/jquery.easyui.min.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+</head>
+<body>
+<div class="easyui-layout" fit="true">
+    <div data-options="region:'west',split:true,iconCls:'icon-new'" title="最新公告" style="width:200px;">
+        <div class="easyui-draggable" data-options="handle:'.title',disabled:true"
+             style="width:100%;height:100px;border: 1px solid #ccc">
+            <div class="title" style="background:#ccc;">公告名称</div>
+            <ul>
+                <li>日期：2018-01-31</li>
+                <li>主题：年终奖发放</li>
+                <li>内容：年终奖将于2月4日发放</li>
+            </ul>
+        </div>
+        <div class="easyui-draggable" data-options="handle:'.title',disabled:true"
+             style="width:100%;height:100px;border: 1px solid #ccc">
+            <div class="title" style="background:#ccc;">公告名称</div>
+            <ul>
+                <li>日期：2018-01-20</li>
+                <li>主题：放假通知</li>
+                <li>内容：年假将于2月13日至2月23日，共10天</li>
+            </ul>
+        </div>
+        <div class="easyui-draggable" data-options="handle:'.title',disabled:true"
+             style="width:100%;height:100px;border: 1px solid #ccc">
+            <div class="title" style="background:#ccc;">公告名称</div>
+            <ul>
+                <li>日期：2018-01-20</li>
+                <li>主题：年货发放</li>
+                <li>内容：今天进进行年货的发放</li>
+            </ul>
+        </div>
+        <div class="easyui-draggable" data-options="handle:'.title',disabled:true"
+             style="width:100%;height:100px;border: 1px solid #ccc">
+            <div class="title" style="background:#ccc;">公告名称</div>
+            <ul>
+                <li>日期：2018-01-31</li>
+                <li>主题：</li>
+                <li>内容：</li>
+            </ul>
+        </div>
+        <div class="easyui-draggable" data-options="handle:'.title',disabled:true"
+             style="width:100%;height:100px;border: 1px solid #ccc">
+            <div class="title" style="background:#ccc;">公告名称</div>
+            <ul>
+                <li>日期：2018-01-31</li>
+                <li>主题：</li>
+                <li>内容：</li>
+            </ul>
+        </div>
+    </div>
+    <div data-options="region:'center',iconCls:'icon-ok'">
+        <div id="main" style="width: 1000px;height:600px;"></div>
+    </div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '日常统计'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["今日科室入院人数","病种人数统计","科室随访人数统计"]
+            },
+            yAxis: {},
+            series: [{
+                name: '人数',
+                type: 'bar',
+                data: [15, 6, 36]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</div>
+</body>
+</html>

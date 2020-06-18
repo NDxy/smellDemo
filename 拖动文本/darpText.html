@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>darp</title>
+    <meta content="width=device-width" />
+    <style>
+        body {
+            padding: 25px;
+        }
+
+        .row {
+            width: 800px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 50px;
+        }
+
+        .tabsBox {
+            height: 350px;
+        }
+
+        #new {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tag,
+        .oldTab {
+            padding: 3px 5px;
+            margin: 0 10px 10px 0;
+            display: inline-block;
+            border: 1px solid #2290ee;
+            border-radius: 3px;
+        }
+
+        .oldTab {
+            border: 1px solid #cccccc;
+        }
+
+        .delect {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <p id="old" draggable="false" data-id="">
+            <span class="oldTab" data-id="1">ID：1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Blanditiis deleniti doloribus ea incidunt libero natus provident
+                soluta tenetur voluptatem. Ad, dicta distinctio eveniet fugiat libero
+                molestiae nulla quae rerum veniam.</span>
+            <span class="oldTab" data-id="2">ID：2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus, assumenda blanditiis culpa deleniti doloribus eius et in
+                ipsa itaque minima minus nemo nobis nostrum perferendis praesentium
+                repellat saepe ut veniam.</span>
+            <span class="oldTab" data-id="3">ID：3 Ab adipisci animi blanditiis cum, debitis ea expedita magni
+                molestiae natus, nobis nostrum odio quibusdam quisquam quod repellat
+                repudiandae saepe sapiente sit soluta tempora velit, veniam voluptas
+                voluptate voluptates voluptatum.</span>
+            <span class="oldTab" data-id="4">ID：4 Aut consectetur cupiditate distinctio dolores exercitationem
+                ipsum obcaecati quisquam reiciendis tenetur. Blanditiis consequatur
+                delectus eveniet excepturi hic illum iure laborum laudantium mollitia
+                necessitatibus nulla perspiciatis, reprehenderit, similique sit
+                voluptatem voluptatibus!</span>
+            <span class="oldTab" data-id="5">ID：5 Ab amet assumenda doloribus fuga hic impedit ipsa iure magni
+                necessitatibus sunt. Adipisci beatae blanditiis delectus dignissimos
+                dolores, ipsam, iste laborum pariatur porro repellendus saepe
+                similique vero, voluptatem! Eligendi, voluptatem?</span>
+            <span class="oldTab" data-id="6">ID：6 A deleniti eum nostrum tempore veniam? Culpa eum hic natus
+                numquam perspiciatis placeat sequi tempore! Amet aperiam debitis
+                dolorem ea eaque et hic magni molestias quidem repudiandae.
+                Aspernatur, quis, tenetur.</span>
+        </p>
+        asdf
+    </div>
+    <div id="tabsBox" class="row tabsBox"></div>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('dragstart', function (event) {
+            console.log(event)
+            var NY = false
+            var elemClassName = event.target.parentNode.className
+            event.dataTransfer.setData('id', event.target.parentNode.dataset.id) //设置id
+            event.dataTransfer.setData(
+                'NY',
+                elemClassName == 'oldTab' ? true : false
+            ) //判断是否是可以拖拽的文本，并设置到事件的event参数中去
+        })
+        /* events fired on the drop targets */
+        document.addEventListener('dragover', function (event) {
+            // prevent default to allow drop
+            event.preventDefault()
+        }, false)
+
+        document.addEventListener('drop', function (event) {
+            // 阻止默认动作（如打开一些元素的链接）
+            event.preventDefault()
+            var id = event.dataTransfer.getData('id') //拖拽对应的id
+            var text = event.dataTransfer.getData('text') //获取拖拽的文本
+            var NY = event.dataTransfer.getData('NY') //获取判断拖拽的元素是否是数据所在元素
+            // 移动拖动的元素到所选择的放置目标节点时判断，如果是加添加tab，反之不添加
+            //判断是否是对应的元素
+            if (event.target.id == 'tabsBox' && NY == 'true') {
+                var tag = document.createElement('span')
+                var delectBtn = document.createElement('b')
+                delectBtn.className = 'delect'
+                delectBtn.innerHTML = 'x'
+                tag.className = 'tag'
+                tag.innerText = 'id:' + id + "'" + text + "' "
+                tag.setAttribute('contenteditable', true)//加上contenteditable，可以使HTML进行富文本编辑
+                tag.dataset.id = id
+                tag.appendChild(delectBtn)
+                event.target.appendChild(tag)
+                delectBtn.addEventListener('click', function (e) {
+                    delectBtn.parentNode.parentNode.removeChild(
+                        delectBtn.parentNode
+                    )
+                })
+            }
+        }, false)
+    </script>
+</body>
+
+</html>

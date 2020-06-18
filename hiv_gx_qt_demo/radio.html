@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>单选框插件</title>
+    <link rel="stylesheet" href="css/FormUI.css">
+</head>
+<body>
+<h1>单选框插件</h1>
+<h3>使用class</h3>
+<div>
+    <label for="rd1"><input type="radio" name="rd1" id="rd1" value="1" class="FUI_radioself">选项1</label>
+    <label for="rd2"><input type="radio" name="rd1" id="rd2" value="2" class="FUI_radioself">选项2</label>
+    <label for="rd3"><input type="radio" name="rd1" id="rd3" value="3" class="FUI_radioself">选项3</label>
+</div>
+<hr>
+<h3>使用JS</h3>
+<div>
+    <label for="rd4"><input type="radio" name="rd2" id="rd4" value="4">选项4</label>
+    <label for="rd5"><input type="radio" name="rd2" id="rd5" value="5">选项5</label>
+    <label for="rd6"><input type="radio" name="rd2" id="rd6" value="6">选项6</label>
+</div>
+<script language="JavaScript" src="js/jquery-1.9.1.js"></script>
+<script language="JavaScript" src="js/FormUI.js"></script>
+<script>
+    //    赋值
+//    $('[name="rd1"]')._radioself("select", "3");
+//    $('[name="rd2"]')._radioself("select", "6");
+    //    获取值
+    /*console.log($('[name="rd1"]')._radioself("getValue"));
+     console.log($('[name="rd2"]')._radioself("getValue"));*/
+//    设置高度为400，设为行内块元素
+//    $('[name="rd1"]')._radioself({width:150,row:true});
+//    设置选中事件_onChanged();
+//    $('#rd1')._radioself({
+//        _onChanged:function(){
+//            console.log("您选择了value值为"+$(this).val()+"的选项！");
+//        }
+//    });
+
+    //    设置高度为400，设为块元素
+    $('[name="rd2"]')._radioself({width:150,row:false});
+    //    设置选中事件_onChanged();
+    $('[name="rd2"]')._radioself({
+        _onChanged:function(){
+            console.log("您选择了value值为"+$(this).val()+"的选项！");
+        }
+    });
+
+</script>
+</body>
+</html>

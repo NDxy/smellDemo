@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #E74c3c;
+    color: #fff;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.lf {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+.clear:after{
+    content: "";
+    clear: both;
+}
+/******************************************radio控件样式******************************************/
+.radF, .chkF {
+    display: block;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 36px;
+    padding-left: 8px;
+    line-height: 34px;
+}
+
+.FUI_radioself, .FUI_chkself {
+    /*display: none;*/
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.radF i.rad_icon {
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    margin-right: 5px;
+    /*background-color: #fff;*/
+    background-image: url("../img/icon/radioBGI.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: relative;
+    top: 3px;
+}
+
+label.checked i.rad_icon, label.checked i.chk_icon {
+    background-position: 0 -16px;
+}
+
+.radF:hover, .chkF:hover {
+    background-color: #f4f4f4;
+}
+
+.focus {
+    border: 1px solid #77C0F1;
+    background-color: #efefef;
+}
+
+/******************************************radio控件样式******************************************/
+
+/******************************************checkbox控件样式******************************************/
+.chkF i.chk_icon {
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    margin-right: 5px;
+    /*background-color: #fff;*/
+    background-image: url("../img/icon/checkboxBGI.gif");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: relative;
+    top: 3px;
+
+}
+
+/******************************************checkbox控件样式******************************************/
+
+/******************************************select控件样式******************************************/
+.FUI_selself {
+    height: 32px;
+    width: 180px;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+    font-size: 15px;
+    /*color: #E74c3c;*/
+}
+
+.selIcon {
+    display: inline-block;
+    border: 1px solid #aaa;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    background-image: url("../img/icon/selDown1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    vertical-align: bottom;
+    font-style: normal;
+    z-index: 5;
+}
+
+.selIcon.selDown {
+    background-image: url("../img/icon/selUp1.png");
+}
+
+.selF {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.itemBox {
+    border: 1px solid #aaa;
+    position: absolute;
+    background-color: #f8f8f8;
+    display: none;
+    max-height: 170px;
+    overflow-x:hidden;
+}
+
+.item {
+    padding-left: 10px;
+    /*height: 28px;*/
+    line-height: 28px;
+}
+
+.item:hover {
+    background-color: #77C0F1;
+    color: #fff;
+    cursor: pointer;
+}
+
+/******************************************select控件样式******************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

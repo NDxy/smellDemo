@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>患者信息</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="easyui/jquery.easyui.min.js"></script>
+</head>
+<body>
+<table class="easyui-datagrid" title="患者信息"
+       data-options="rownumbers:true,singleSelect:true,fit:true,method:'get',toolbar:'#tb'">
+    <thead>
+    <tr>
+        <th data-options="field:'itemid',width:80">住院号</th>
+        <th data-options="field:'productid',width:100">姓名</th>
+        <th data-options="field:'listprice',width:80">年龄</th>
+        <th data-options="field:'unitcost',width:80">性别</th>
+        <th data-options="field:'attr1',width:240">身份证号</th>
+        <th data-options="field:'attr1',width:240">联系电话</th>
+        <th data-options="field:'attr1',width:240">户籍地址</th>
+        <th data-options="field:'status',width:80">入院次数</th>
+        <th data-options="field:'status',width:120">入院日期</th>
+        <th data-options="field:'status',width:120">出院日期</th>
+        <th data-options="field:'status',width:120">主管医生</th>
+    </tr>
+    </thead>
+</table>
+<div id="tb" style="padding:5px;height:auto">
+    <div>
+        按科室:
+        <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+            <option value="">我的病人</option>
+            <option value="">普通介入诊疗病区</option>
+            <option value="">肿瘤放疗病区</option>
+            <option value="">肿瘤化疗一区病区</option>
+        </select>
+        <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+            <option value="">按住院号</option>
+            <option value="">按姓名</option>
+            <option value="">按身份证</option>
+        </select>
+        <input type="text" placeholder="请输入身份证" style="height: 22px;padding-left: 5px">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search">查询</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add">新增患者</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-save">导入</a>
+    </div>
+</div>
+</body>
+</html>

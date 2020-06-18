@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广西肿瘤疾病管理平台</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="easyui/jquery.easyui.min.js"></script>
+    <style>
+        .tabs_imgBox {
+            display: inline-block;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+        }
+
+        .tabs_img {
+            position: relative;
+            top: 5px;
+            width: 26px;
+        }
+    </style>
+</head>
+<body>
+<header id="head">
+    <div class="container clearfix">
+        <div class="lf clearfix">
+            <span class="lf">
+                <img class="logo_icon" src="Img/u1856.png" height="40"/>
+            </span>
+            <span class="lf title_l"> | 广西肿瘤疾病管理平台</span>
+        </div>
+        <div class="rt head_lf">
+            <p class="copyright">
+                copyright2018©广西诺加技术有限公司 版权所有 服务热线：400-000000
+            </p>
+        </div>
+    </div>
+</header>
+<div id="nav" class="easyui-tabs" data-options="border:false,fit:true,tabPosition:'top',headerWidth:120,tabHeight:40">
+    <div class="easyui-tab" data-options="closable:false"
+         title="<span class='tabs_imgBox'><img class='tabs_img' src='img/index.png'/> 首页</span>"
+         style="padding: 2px 0; overflow: auto">
+        <iframe id="index" src="" frameborder="0" width="100%" height="98%"></iframe>
+    </div>
+    <div class="easyui-tab" data-options="closable:false"
+         title="<span class='tabs_imgBox'><img class='tabs_img' src='img/Medical.png'/> 患者信息</span>"
+         style="padding: 2px 0; overflow: auto">
+        <iframe id="patient" src="PatientAdministration.html" frameborder="0" width="100%" height="98%"></iframe>
+    </div>
+    <div class="easyui-tab" data-options="closable:false"
+         title="<span class='tabs_imgBox'><img class='tabs_img' src='img/follow-up.png'/> 随访管理</span>"
+         style="padding: 2px 0; overflow: auto">
+
+    </div>
+    <div class="easyui-tab" data-options="closable:false"
+         title="<span class='tabs_imgBox'><img class='tabs_img' src='img/knowledge.png'/> 临床知识库</span>"
+         style="padding: 2px 0; overflow: auto">
+
+    </div>
+    <div class="easyui-tab" data-options="closable:false"
+         title="<span class='tabs_imgBox'><img class='tabs_img' src='img/report-forms.png'/> 统计分析</span>"
+         style="padding: 2px 0; overflow: auto">
+
+    </div>
+    <div class="easyui-tab" data-options="closable:false"
+         title="<span class='tabs_imgBox'><img class='tabs_img' src='img/system1.png'/> 系统设置</span>"
+         style="padding: 2px 0; overflow: auto">
+
+    </div>
+</div>
+<div id="suifMenu">
+    <div>随访推送</div>
+    <div>随访跟踪</div>
+    <div data-options="">推送管理</div>
+</div>
+<div id="huanzMenu" style="font-size: 15px;">
+    <div>随访推送</div>
+    <div>随访跟踪</div>
+    <div data-options="">推送管理</div>
+</div>
+<script src="js/index.js"></script>
+<script>
+    $('#nav').tabs({
+        onSelect:function(title,index){
+            var page_index = $("#index").attr("src"),page_Patient = $("#patient").attr("src"),url;
+            switch(index)
+            {
+                case 0:
+//                    if(!page_index)$("#index").attr("src","index.html");
+                    url = "index.html";
+                    break;
+                case 1:
+//                    if(!page_Patient)$("#index").attr("src","PatientAdministration.html");
+                    url = "PatientAdministration.html";
+                    break;
+                case 2:
+//                    if(!page_Patient)$("#index").attr("src","");
+                    break;
+                case 3:
+//                    if(!page_Patient)$("#index").attr("src","");
+                    break;
+                case 4:
+//                    if(!page_Patient)$("#index").attr("src","");
+                    break;
+                case 5:
+//                    if(!page_Patient)$("#index").attr("src","");
+                    break;
+                default:
+            }
+            var tab = $('#nav').tabs('getSelected');  // 获取选择的面板
+            var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:98%;"></iframe>';
+            $('#nav').tabs('update', {
+                tab: tab,
+                options: {
+                    title: title,
+                    content: content,
+                    closable: false
+                }
+            });
+
+        }
+    });
+
+    $(function(){
+        var p = $('#nav').tabs().tabs('tabs')[1];
+        var mb = p.panel('options').tab.find('a.tabs-inner');
+        mb.menubutton({
+            menu:'#huanzMenu',
+            iconCls:'icon-help'
+        }).click(function(){
+            $('#nav').tabs('select',1);
+        });
+    });
+</script>
+</body>
+</html>
