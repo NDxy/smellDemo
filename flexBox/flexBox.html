@@ -1,0 +1,81 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-04 12:28:50
+ * @LastEditTime: 2021-02-05 14:01:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \flexBox\flexBox.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			background-color: rgb(1, 2, 68);
+		}
+
+		.panel_box {
+			display: flex;
+			width: 500px;
+			height: 350px;
+			margin: 100px auto;
+			background-color: #FFF;
+			overflow: hidden;
+			color: #000000;
+		}
+
+		.panel {
+			width: 20%;
+			transition: all 0.28s ease-in;
+			box-shadow: -10px 0px 20px 0px #efefef;
+			/* padding: 2px; */
+			/* box-shadow: 0 0 10rem currentColor; */
+			/* flex: 1; */
+		}
+
+		.panel:hover {
+			width: 200%;
+		}
+
+		/* .panel:nth-child(1) {
+			background-color: #a7fafa;
+		}
+
+		.panel:nth-child(2) {
+			background-color: rgb(246, 248, 118);
+		}
+
+		.panel:nth-child(3) {
+			background-color: rgb(136, 147, 247);
+		}
+
+		.panel:nth-child(4) {
+			background-color: rgb(253, 121, 194);
+		}
+
+		.panel:nth-child(5) {
+			background-color: rgb(203, 255, 160);
+		} */
+	</style>
+</head>
+
+<body>
+	<div class="panel_box">
+		<div class="panel">我是标签一</div>
+		<div class="panel">我是标签二</div>
+		<div class="panel">我是标签三</div>
+		<div class="panel">我是标签四</div>
+		<div class="panel">我是标签五</div>
+		<div class="panel"></div>
+		<div class="panel"></div>
+		<div class="panel"></div>
+		<div class="panel"></div>
+		<div class="panel"></div>
+	</div>
+</body>
+
+</html>
